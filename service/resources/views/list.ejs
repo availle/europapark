@@ -1,0 +1,5 @@
+<ul>
+    <% coasters.forEach(function(rollercoaster){ %>
+    <p><%- rollercoaster.name  %>: <%- rollercoaster.waitTime%> min, Status <%- rollercoaster.status%></p>
+    <% }); %>
+</ul>

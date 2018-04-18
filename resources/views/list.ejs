@@ -1,5 +1,25 @@
-<ul>
-    <% coasters.forEach(function(rollercoaster){ %>
-    <p><%- rollercoaster.name  %>: <%- rollercoaster.waitTime%> min, Status <%- rollercoaster.status%></p>
-    <% }); %>
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link href="/static/list.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class='container'>
+<div class='group'>
+    <% refinedCoasters.fast.forEach(function(rollercoaster){ %>
+    <div class='coaster'><%- rollercoaster.shortName %> : <%- rollercoaster.waitTime%> min, Status <%- rollercoaster.status%></div>
+<% }); %>
+</div>
+<div class='group'>
+    <% refinedCoasters.slow.forEach(function(rollercoaster){ %>
+    <div class='coaster'><%- rollercoaster.shortName %> : <%- rollercoaster.waitTime%> min, Status <%- rollercoaster.status%></div>
+<% }); %>
+</div>
+<div class='group'>
+    <% refinedCoasters.water.forEach(function(rollercoaster){ %>
+    <div class='coaster'><%- rollercoaster.shortName %> : <%- rollercoaster.waitTime%> min, Status <%- rollercoaster.status%></div>
+<% }); %>
+</div>
+</div>
+</body>

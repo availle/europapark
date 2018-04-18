@@ -1,0 +1,13 @@
+.box {
+    display: flex;
+}
+.group {
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    background-color: aliceblue;
+}
+
+.water {
+
+}
+

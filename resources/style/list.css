@@ -3,7 +3,7 @@
     flex-wrap: wrap;
 }
 .group {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     font-family: 'PT Sans';
     margin-right: 5px;
     margin-bottom: 5px;
@@ -11,12 +11,36 @@
     background-color: aliceblue;
 }
 
+.item {
+    flex: 0 1 auto;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.coastername {
+    flex: 1 0 auto;
+}
+
 .highlight {
     background-color: yellow;
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.nohighlight {
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .coaster {
     margin-bottom: 1px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .water {

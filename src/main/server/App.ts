@@ -56,7 +56,7 @@ class App {
         (coasters as any).forEach((coaster: Coaster) => {
             coasterMap[ coaster.id ] = {
                 ...coaster,
-                highlighting: (+coaster.waitTime <= 5 && coaster.status !== 'Closed' ? 'highlight' : 'coaster')
+                highlighting: (+coaster.waitTime <= 5 && coaster.status !== 'Closed' ? 'highlight' : 'nohighlight')
             }
         })
 

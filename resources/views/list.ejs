@@ -11,8 +11,10 @@
     <div class='group'>
         <h3><%- key[0].toUpperCase() + key.substr(1) %>:</h3>
         <% refinedCoasters[key].forEach(function(rollercoaster){ %>
-        <div class= <%= rollercoaster.highlighting %>>
-            <%- rollercoaster.shortName %> : <%- rollercoaster.waitTime %> min, Status <%- rollercoaster.status %>
+        <div class=<%- rollercoaster.highlighting%>>
+            <div class='coastername'><b><%- rollercoaster.shortName %></b></div>
+            <div class='item'><%- rollercoaster.waitTime %> min</div>
+            <div class='item'><%- rollercoaster.status %></div>
         </div>
         <% }); %>
     </div>

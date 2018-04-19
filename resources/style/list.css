@@ -1,10 +1,14 @@
 .box {
     display: flex;
+    flex-flow: row wrap;
 }
 .group {
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
+    flex: 1 1;
+    flex-shrink: 0;
+    font-family: "Arial Rounded MT Bold";
     background-color: aliceblue;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .water {

@@ -6,7 +6,8 @@ interface Coaster {
     id: string,
     name: string,
     waitTime: string,
-    status: string
+    status: string,
+    highlighting: string
 }
 
 interface CoasterMap {
@@ -42,7 +43,6 @@ class App {
         const renderPage = (path: string) => (_: Request, res: Response) => {
             ep.GetWaitTimes().then((coasters: Coaster[]) => {
                 const refinedCoasters = this.prepareCoasters(coasters)
-                console.log(refinedCoasters)
                 res.type('text/html').render(path, { refinedCoasters })
             })
         }
@@ -54,7 +54,10 @@ class App {
         const coasterMap: CoasterMap = {};
 
         (coasters as any).forEach((coaster: Coaster) => {
-            coasterMap[ coaster.id ] = coaster
+            coasterMap[ coaster.id ] = {
+                ...coaster,
+                highlighting: (+coaster.waitTime <= 5 && coaster.status !== 'Closed' ? 'highlight' : 'coaster')
+            }
         })
 
         const fast = [

@@ -1,17 +1,36 @@
 .box {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
 }
 .group {
-    flex: 1 1;
-    flex-shrink: 0;
-    font-family: "Arial Rounded MT Bold";
-    background-color: aliceblue;
+    flex: 1 0 auto;
+    font-family: 'PT Sans';
     margin-right: 5px;
     margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: aliceblue;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.coaster {
+    margin-bottom: 1px;
 }
 
 .water {
 
 }
+.timestamp {
+    font-family: 'PT Sans';
+    align-self: right;
+    margin-top: 20px;
+}
+
+h3 {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
 

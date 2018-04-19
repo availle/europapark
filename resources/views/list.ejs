@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <link href="/static/list.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 </head>
 <body>
 <div class='box'>
-<div class='group'>
-    <% refinedCoasters.fast.forEach(function(rollercoaster){ %>
-    <div class='coaster'><%- rollercoaster.shortName %> : <%- rollercoaster.waitTime%> min, Status <%- rollercoaster.status%></div>
-<% }); %>
-</div>
-<div class='group'>
-    <% refinedCoasters.slow.forEach(function(rollercoaster){ %>
-    <div class='coaster'><%- rollercoaster.shortName %> : <%- rollercoaster.waitTime%> min, Status <%- rollercoaster.status%></div>
-<% }); %>
-</div>
-<div class='group'>
-    <% refinedCoasters.water.forEach(function(rollercoaster){ %>
-    <div class='coaster'><%- rollercoaster.shortName %> : <%- rollercoaster.waitTime%> min, Status <%- rollercoaster.status%></div>
-<% }); %>
-</div>
+    <div class='group'>
+        <h3>Fast:</h3>
+        <% refinedCoasters.fast.forEach(function(rollercoaster){ %>
+        <% if (parseInt(rollercoaster.waitTime, 10) < 5 && rollercoaster.status !== 'Closed') { %>
+        <div class='highlight'>
+            <% } else { %>
+            <div class='coaster'>
+                <% } %>
+                <%- rollercoaster.shortName %> : <%- rollercoaster.waitTime %> min, Status <%- rollercoaster.status %></div>
+            <% }); %>
+        </div>
+        <div class='group'>
+            <h3>Slow:</h3>
+            <% refinedCoasters.slow.forEach(function(rollercoaster){ %>
+            <% if (parseInt(rollercoaster.waitTime, 10) < 5 && rollercoaster.status !== 'Closed') { %>
+            <div class='highlight'>
+                <% } else { %>
+                <div class='coaster'>
+                    <% } %>
+                    <%- rollercoaster.shortName %> : <%- rollercoaster.waitTime %> min, Status <%- rollercoaster.status %></div>
+                <% }); %>
+            </div>
+            <div class='group'>
+                <h3>Water:</h3>
+                <% refinedCoasters.water.forEach(function(rollercoaster){ %>
+                <% if (parseInt(rollercoaster.waitTime, 10) < 5 && rollercoaster.status !== 'Closed') { %>
+                <div class='highlight'>
+                    <% } else { %>
+                    <div class='coaster'>
+                        <% } %>
+                        <%- rollercoaster.shortName %> : <%- rollercoaster.waitTime %> min, Status <%- rollercoaster.status %></div>
+                    <% }); %>
+                </div>
+            </div>
+            <div class='timestamp'>
+            <%- new Date() %>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
